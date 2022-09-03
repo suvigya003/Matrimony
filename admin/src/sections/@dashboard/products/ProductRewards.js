@@ -7,10 +7,11 @@ import InputLabel from '@mui/material/InputLabel';
 import InputAdornment from '@mui/material/InputAdornment';
 import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
-import TextField from '@mui/material/TextField';
+import TextField  from '@mui/material/TextField';
 // material
 import {
-    Box,
+  Box,
+  Grid,
   Card,
   CardHeader,
   Table,
@@ -26,6 +27,7 @@ import {
   TableContainer,
   TablePagination,
 } from '@mui/material';
+import ProductRewardsTable from './ProductRewardsTable'
 
 export default function ProductRewards() {
     return (
@@ -36,30 +38,31 @@ export default function ProductRewards() {
             flexDirection: 'column',
           }}
         >
-          <Box
+          {/* <Card> */}
+          {/* <CardHeader title="Add New Reward"/> */}
+          <h3>Add New Reward</h3>
+          <br />
+          {/* <Box
             sx={{
               display: 'flex',
               alignItems: 'center',
             }}
           >
-            <Typography>Reward per Referral:</Typography>
+            <Typography>Spotlight days:</Typography>
             <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
-              {/* <FormHelperText id="outlined-weight-helper-text">Weight</FormHelperText> */}
-
-              {/* <input type="text" /> */}
+              
               <OutlinedInput
                 id="outlined-adornment-weight"
                 // fullWidth
                 //   width='100%'
                 //   value={values.weight}
                 //   onChange={handleChange('weight')}
-                startAdornment={<InputAdornment position="end">$ &nbsp;</InputAdornment>}
+                // startAdornment={<InputAdornment position="end">$ &nbsp;</InputAdornment>}
                 aria-describedby="outlined-weight-helper-text"
                 inputProps={{
                   'aria-label': 'weight',
                 }}
               />
-              {/* </label> */}
             </FormControl>
           </Box>
           <Box
@@ -68,11 +71,9 @@ export default function ProductRewards() {
               alignItems: 'center',
             }}
           >
-            <Typography>Reward per Referral:</Typography>
+            <Typography>Referral Count:</Typography>
             <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
-              {/* <FormHelperText id="outlined-weight-helper-text">Weight</FormHelperText> */}
-
-              {/* <input type="text" /> */}
+             
               <OutlinedInput
                 id="outlined-adornment-weight"
                 // multiline
@@ -80,7 +81,7 @@ export default function ProductRewards() {
                 //   width='100%'
                 //   value={values.weight}
                 //   onChange={handleChange('weight')}
-                startAdornment={<InputAdornment position="end">$ &nbsp;</InputAdornment>}
+                // startAdornment={<InputAdornment position="end">$ &nbsp;</InputAdornment>}
                 aria-describedby="outlined-weight-helper-text"
                 inputProps={{
                   'aria-label': 'weight',
@@ -90,19 +91,28 @@ export default function ProductRewards() {
                 }}
               />
             </FormControl>
+          </Box> */}
+          <Box container spacing={3} mb={3}>
+            <Box  xs={12} sm={6} md={3} mb={3}>
+              <TextField fullWidth label="Spotlight Days" variant="outlined" />
+            </Box>            
+            <Box  xs={12} sm={6} md={3}>
+              <TextField fullWidth label="Referral Count" variant="outlined" />
+            </Box>
           </Box>
-
           <Stack direction="row" alignItems="center" justifyContent="right" mb={5} mr={1} mt={1}>
             <Button
               variant="contained"
               component={RouterLink}
               to="#"
               //   startIcon={<Iconify icon="eva:plus-fill" />}
-              sx={{ pl: '20px', pr: '20px' }}
+              sx={{ p: '8px', pl: '20px', pr: '20px' }}
             >
-              Update
+              Add
             </Button>
           </Stack>
+          <ProductRewardsTable />
+          {/* </Card> */}
         </Box>
       </>
     );

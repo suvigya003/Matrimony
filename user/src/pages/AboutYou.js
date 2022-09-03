@@ -11,6 +11,7 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  Grid,
   Box,
   Card,
   Table,
@@ -38,6 +39,7 @@ import {
   Preference,
   ProfessionalInfo,
   ReligionInfo,
+  You
 } from '../sections/@dashboard/aboutYou';
 
 export default function AboutYou() {
@@ -74,9 +76,8 @@ export default function AboutYou() {
       <Container>
         <Card>
           <Box conatiner>
-            
-              {/* 6 buttons */}
-              {/* <Box mt={2} mb={6}>
+            {/* 6 buttons */}
+            {/* <Box mt={2} mb={6}>
                 <Stepper activeStep={state - 1} alternativeLabel>
                   {steps.map((label) => (
                     <Step key={label}>
@@ -86,8 +87,8 @@ export default function AboutYou() {
                 </Stepper>
               </Box> */}
 
-              {/* 6 Accordions */}
-              {/* {(() => {
+            {/* 6 Accordions */}
+            {/* {(() => {
                 switch (state) {
                   case 1:
                     return (
@@ -524,7 +525,7 @@ export default function AboutYou() {
                 }
               })()} */}
 
-              {/* <Box>
+            {/* <Box>
         
           <Box marginBottom={1}>
           <Accordion >
@@ -741,67 +742,118 @@ export default function AboutYou() {
         
       </Box> */}
 
-              <Box sx={{ width: '100%', typography: 'body1' }}>
-                <TabContext value={value}>
-                  <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                    <TabList onChange={handleChange} aria-label="lab API tabs example">
-                      <Tab label="Personal Info" value="1" />
-                      <Tab label="Educational Info" value="2" />
-                      <Tab label="Professional Info" value="3" />
-                      <Tab label="Family Info" value="4" />
-                      <Tab label="Religion Info" value="5" />
-                      <Tab label="Preferences" value="6" />
-                      <Tab label="Astro Info" value="7" />
-                      {/* <Tab label="About You" value="8" /> */}
-                    </TabList>
-                  </Box>
-                  <TabPanel value="1"><PersonalInfo/></TabPanel>
-                  <TabPanel value="2"><EducationalInfo/></TabPanel>
-                  <TabPanel value="3"><ProfessionalInfo/></TabPanel>
-                  <TabPanel value="4"><FamilyInfo/></TabPanel>
-                  <TabPanel value="5"><ReligionInfo/></TabPanel>
-                  <TabPanel value="6"><Preference/></TabPanel>
-                  <TabPanel value="7"><AstroInfo/></TabPanel>
-                  {/* <TabPanel value="8"><AboutYou/></TabPanel> */}
-                </TabContext>
-              </Box>
-              {/* 2 buttons */}
-              <Box
-                mt={4}
+            <Box sx={{ width: '100%', typography: 'body1' }}>
+              <TabContext value={value}>
+                <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                  <TabList onChange={handleChange} aria-label="lab API tabs example">
+                    <Tab label="Personal Info" value="1" />
+                    <Tab label="Educational Info" value="2" />
+                    <Tab label="Professional Info" value="3" />
+                    <Tab label="Family Info" value="4" />
+                    <Tab label="Religion Info" value="5" />
+                    <Tab label="Preferences" value="6" />
+                    <Tab label="Astro Info" value="7" />
+                    <Tab label="About You" value="8" />
+                  </TabList>
+                </Box>
+                <TabPanel value="1">
+                  <PersonalInfo />
+                </TabPanel>
+                <TabPanel value="2">
+                  <EducationalInfo />
+                </TabPanel>
+                <TabPanel value="3">
+                  <ProfessionalInfo />
+                </TabPanel>
+                <TabPanel value="4">
+                  <FamilyInfo />
+                </TabPanel>
+                <TabPanel value="5">
+                  <ReligionInfo />
+                </TabPanel>
+                <TabPanel value="6">
+                  <Preference />
+                </TabPanel>
+                <TabPanel value="7">
+                  <AstroInfo />
+                </TabPanel>
+                <TabPanel value="8"><You/></TabPanel>
+              </TabContext>
+            </Box>
+            {/* 2 buttons */}
+            <Container maxWidth="xl">
+              <Grid container spacing={0} mb={3} ml={3}>
+                <Grid item xs={12} sm={6} md={2}>
+                  <Button
+                    variant="contained"
+                    sx={{
+                      // p:'10px',
+                      paddingLeft: '45px',
+                      paddingRight: '45px',
+                      paddingTop: '10px',
+                      paddingBottom: '10px',
+                      fontWeight: 600,
+                      // borderRadius: '3px',
+                    }}
+                  >
+                    Save
+                  </Button>
+                </Grid>
+                <Grid item xs={12} sm={6} md={2}>
+                  <Button
+                    variant="outlined"
+                    sx={{
+                      paddingLeft: '30px',
+                      paddingRight: '30px',
+                      paddingTop: '10px',
+                      paddingBottom: '10px',
+                      // marginLeft: '25px',
+                      fontWeight: 600,
+                      // borderRadius: '3px',
+                    }}
+                  >
+                    Preview
+                  </Button>
+                </Grid>
+              </Grid>
+            </Container>
+
+            {/* <Box
+              mt={4}
+              mb={3}
+              sx={{
+                display: 'inline-flex',
+              }}
+            >
+              <Button
+                variant="contained"
                 sx={{
-                  display: 'inline-flex',
+                  // p:'10px',
+                  paddingLeft: '45px',
+                  paddingRight: '45px',
+                  paddingTop: '10px',
+                  paddingBottom: '10px',
+                  fontWeight: 600,
+                  // borderRadius: '3px',
                 }}
               >
-                <Button
-                  variant="contained"
-                  sx={{
-                    // p:'10px',
-                    paddingLeft: '45px',
-                    paddingRight: '45px',
-                    paddingTop: '10px',
-                    paddingBottom: '10px',
-                    fontWeight: 600,
-                    borderRadius: '3px',
-                  }}
-                >
-                  Save
-                </Button>
-                <Button
-                  variant="outlined"
-                  sx={{
-                    paddingLeft: '30px',
-                    paddingRight: '30px',
-                    paddingTop: '10px',
-                    paddingBottom: '10px',
-                    marginLeft: '25px',
-                    fontWeight: 600,
-                    borderRadius: '3px',
-                  }}
-                >
-                  Preview
-                </Button>
-              </Box>
-           
+                Save
+              </Button>
+              <Button
+                variant="outlined"
+                sx={{
+                  paddingLeft: '30px',
+                  paddingRight: '30px',
+                  paddingTop: '10px',
+                  paddingBottom: '10px',
+                  marginLeft: '25px',
+                  fontWeight: 600,
+                  // borderRadius: '3px',
+                }}
+              >
+                Preview
+              </Button>
+            </Box> */}
           </Box>
         </Card>
       </Container>

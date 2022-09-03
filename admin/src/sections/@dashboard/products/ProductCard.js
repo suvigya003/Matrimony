@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import { Link as RouterLink } from 'react-router-dom';
 // material
-import { Box, Card, Link, Typography, Stack } from '@mui/material';
+import { Box, Card, Link, Typography, Stack, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
+
 // utils
 import { fCurrency } from '../../../utils/formatNumber';
 // components
@@ -18,7 +19,13 @@ const ProductImgStyle = styled('img')({
   objectFit: 'cover',
   position: 'absolute',
 });
-
+const InfoStyle = styled('div')(({ theme }) => ({
+  display: 'flex',
+  flexWrap: 'wrap',
+  justifyContent: 'flex-end',
+  marginTop: theme.spacing(3),
+  color: theme.palette.text.disabled,
+}));
 // ----------------------------------------------------------------------
 
 ShopProductCard.propTypes = {
@@ -76,6 +83,7 @@ export default function ShopProductCard({ product }) {
           </Typography>
         </Stack>
       </Stack>
+      
     </Card>
   );
 }

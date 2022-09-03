@@ -35,10 +35,10 @@ import USERLIST from '../_mock/user';
 
 const TABLE_HEAD = [
   { id: 'name', label: 'Name', alignRight: false },
-  { id: 'company', label: 'Age', alignRight: false },
-  { id: 'role', label: 'Occupation', alignRight: false },
-  { id: 'isVerified', label: 'Marital Status', alignRight: false },
-  { id: 'status', label: 'ID', alignRight: false },
+  { id: 'company', label: 'Date', alignRight: false },
+  // { id: 'role', label: 'Occupation', alignRight: false },
+  // { id: 'isVerified', label: 'Marital Status', alignRight: false },
+  { id: 'status', label: 'MemberID', alignRight: false },
   { id: '' },
 ];
 
@@ -154,6 +154,10 @@ export default function User() {
           <Grid item xs={12} sm={6} md={3}>
             <UserWidgetSummary title="Rewards" total={50} color="info" icon={'ant-design:apple-filled'} />
           </Grid>
+
+          <Grid item xs={12} sm={6} md={3}>
+            <UserWidgetSummary title="Redeem Rewards"color="info" icon={'ant-design:apple-filled'} />
+          </Grid>
         </Grid>
 
         <Card>
@@ -198,8 +202,8 @@ export default function User() {
                           </Stack>
                         </TableCell>
                         <TableCell align="left">{company}</TableCell>
-                        <TableCell align="left">{role}</TableCell>
-                        <TableCell align="left">{isVerified ? 'Yes' : 'No'}</TableCell>
+                        {/* <TableCell align="left">{role}</TableCell> */}
+                        {/* <TableCell align="left">{isVerified ? 'Yes' : 'No'}</TableCell> */}
                         <TableCell align="left">
                           <Label variant="ghost" color={(status === 'banned' && 'error') || 'success'}>
                             {sentenceCase(status)}

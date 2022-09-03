@@ -113,7 +113,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
             href="https://material-ui.com/store/items/minimal-dashboard/"
             target="_blank"
             variant="contained"
-            sx={{ p: '6px 110px', position: 'fixed', bottom: 10 }}
+            sx={{ p: '8px 110px', position: 'fixed', bottom: 10 }}
           >
             Logout
           </Button>

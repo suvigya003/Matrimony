@@ -1,12 +1,11 @@
-
 import { filter } from 'lodash';
 import { sentenceCase } from 'change-case';
 import { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 // material
 import {
-    Card,
-    CardHeader,
+  Card,
+  CardHeader,
   Table,
   Stack,
   Avatar,
@@ -33,11 +32,11 @@ import USERLIST from '../../../_mock/happy';
 // ----------------------------------------------------------------------
 
 const TABLE_HEAD = [
-  // { id: 'name', label: 'Name', alignRight: false },
-  { id: 'role', label: 'Title', alignRight: false },
-  { id: 'company', label: 'Message', alignRight: false },
-//   { id: 'isVerified', label: 'Approval Status', alignRight: false },
-  { id: 'status', label: 'Date', alignRight: false },
+  { id: 'name', label: 'Spotlight Days', alignRight: false },
+  { id: 'role', label: 'Referral Count', alignRight: false },
+//   { id: 'company', label: 'Referral ID', alignRight: false },
+  //   { id: 'isVerified', label: 'Approval Status', alignRight: false },
+//   { id: 'status', label: 'Member ID', alignRight: false },
   // { id: '' },
 ];
 
@@ -72,7 +71,7 @@ function applySortFilter(array, comparator, query) {
   return stabilizedThis.map((el) => el[0]);
 }
 
-export default function NotificationTable() {
+export default function ProductRewardsTable() {
   const [page, setPage] = useState(0);
 
   const [order, setOrder] = useState('asc');
@@ -146,8 +145,8 @@ export default function NotificationTable() {
           </Button>
         </Stack> */}
 
-              <Card>
-                  <CardHeader title="Past Notifications"/>
+        <Card>
+          {/* <CardHeader title="Past Notifications" /> */}
           <UserListToolbar numSelected={selected.length} filterName={filterName} onFilterName={handleFilterByName} />
 
           <Scrollbar>
@@ -179,8 +178,8 @@ export default function NotificationTable() {
                         <TableCell padding="checkbox">
                           <Checkbox checked={isItemSelected} onChange={(event) => handleClick(event, name)} />
                         </TableCell>
-                        {/* <TableCell component="th" scope="row" padding="none">
-                          <Stack direction="row" alignItems="center" spacing={2}>
+                        {/* <TableCell align="left"  scope="row" padding="none">
+                          <Stack direction="row" alignItems="center" justifyContent="left" spacing={2}>
                             <Avatar alt={name} src={avatarUrl} />
                             <Typography variant="subtitle2" noWrap>
                               {name}
@@ -190,11 +189,11 @@ export default function NotificationTable() {
                         <TableCell align="left">{company}</TableCell>
                         <TableCell align="left">{role}</TableCell>
                         {/* <TableCell align="left">{isVerified ? 'Yes' : 'No'}</TableCell> */}
-                        <TableCell align="left">
+                        {/* <TableCell align="left">
                           <Label variant="ghost" color={(status === 'banned' && 'error') || 'success'}>
                             {sentenceCase(status)}
                           </Label>
-                        </TableCell>
+                        </TableCell> */}
 
                         <TableCell align="right">
                           <UserMoreMenu />
@@ -236,4 +235,3 @@ export default function NotificationTable() {
     </Page>
   );
 }
-

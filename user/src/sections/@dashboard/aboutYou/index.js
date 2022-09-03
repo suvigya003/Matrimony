@@ -6,4 +6,4 @@ export { default as  Preference} from './Preference';
 export { default as  ProfessionalInfo} from './ProfessionalInfo';
 export { default as  ReligionInfo} from './ReligionInfo';
 export { default as  Hobbies} from './Hobbies';
-// export { default as  } from './';
+export { default as  You} from './You';

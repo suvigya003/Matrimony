@@ -110,7 +110,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
 
           <Button href="https://material-ui.com/store/items/minimal-dashboard/" target="_blank" variant="contained"
             sx={{
-              p: '6px 110px',
+              p: '8px 110px',
               position: 'fixed',
               bottom: 10,
             }}

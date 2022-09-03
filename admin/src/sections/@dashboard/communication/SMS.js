@@ -37,11 +37,15 @@ export default function SMS() {
           flexDirection: 'column',
         }}
       >
-        <FormControl sx={{ m: 1 }} variant="outlined">
-          {/* <FormHelperText id="outlined-weight-helper-text">Weight</FormHelperText> */}
+        <Box marginBottom={3}>
+          <TextField fullWidth label="Title" variant="outlined" />
+        </Box>
+        <Box marginBottom={3}>
+          <TextField fullWidth label="Notification Message" multiline rows={10} variant="outlined" />
+        </Box>
+        {/* <FormControl sx={{ m: 1 }} variant="outlined">
           <label htmlFor="temp">
             Title
-            {/* <input type="text" /> */}
             <OutlinedInput
               id="outlined-adornment-weight"
               fullWidth
@@ -63,10 +67,8 @@ export default function SMS() {
           </label>
         </FormControl>
         <FormControl sx={{ m: 1 }} variant="outlined">
-          {/* <FormHelperText id="outlined-weight-helper-text">Weight</FormHelperText> */}
           <label htmlFor="temp">
             Message
-            {/* <input type="text" /> */}
             <OutlinedInput
               id="outlined-adornment-weight"
               multiline
@@ -84,7 +86,7 @@ export default function SMS() {
               }}
             />
           </label>
-        </FormControl>
+        </FormControl> */}
         <Stack direction="row" alignItems="center" justifyContent="right" mb={5} mr={1} mt={1}>
           <Button
             variant="contained"

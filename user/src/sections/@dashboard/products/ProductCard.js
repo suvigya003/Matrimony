@@ -1,8 +1,15 @@
+import React, { useCallback, useState } from 'react';
+import { Controlled as ControlledZoom } from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 import PropTypes from 'prop-types';
 import { Link as RouterLink } from 'react-router-dom';
 // material
 import { Box, Card, Link, Typography, Stack } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css';
+import InnerImageZoom from 'react-inner-image-zoom';
+import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
+import './Gallery.css';
 // utils
 import { fCurrency } from '../../../utils/formatNumber';
 // components
@@ -27,11 +34,38 @@ ShopProductCard.propTypes = {
 
 export default function ShopProductCard({ product }) {
   const { name, cover, price, colors, status, priceSale } = product;
+const [isZoomed, setIsZoomed] = useState(false);
 
+const handleZoomChange = useCallback((shouldZoom) => {
+  setIsZoomed(shouldZoom);
+}, []);
   return (
-    <Card>
-      <Box sx={{ pt: '100%', position: 'relative' }}>
-        {/* {status && (
+    <>
+      <Card>
+        <Box sx={{ pt: '100%', position: 'relative' }}>
+          <TransformWrapper defaultScale={1} defaultPositionX={100} defaultPositionY={200}>
+            <TransformComponent>
+              <img
+                sx={{
+                  top: 0,
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  position: 'absolute',
+                }}
+                // src="https://images.unsplash.com/photo-1597157639073-69284dc0fdaf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwd2VkZGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                src={cover}
+                alt="Hello"
+                srcSet=""
+              />
+              {/* <ProductImgStyle alt={name} src={cover} /> */}
+            </TransformComponent>
+          </TransformWrapper>
+        </Box>
+      </Card>
+      {/* <Card>
+        <Box sx={{ pt: '100%', position: 'relative' }}>
+          {status && (
           <Label
             variant="filled"
             color={(status === 'sale' && 'error') || 'info'}
@@ -45,35 +79,38 @@ export default function ShopProductCard({ product }) {
           >
             {status}
           </Label>
-        )} */}
-        <ProductImgStyle alt={name} src={cover} />
-      </Box>
+        )}
+          <ProductImgStyle alt={name} src={cover} />
+          <TransformWrapper defaultScale={1} defaultPositionX={100} defaultPositionY={200}>
+            <TransformComponent>
+              <img
+                sx={{
+                  top: 0,
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  position: 'absolute',
+                }}
+                // src="https://images.unsplash.com/photo-1597157639073-69284dc0fdaf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwd2VkZGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                src={cover}
+                alt="Hello"
+                srcSet=""
+              />
+              <ProductImgStyle alt={name} src={cover} />
+            </TransformComponent>
+          </TransformWrapper>
+          <InnerImageZoom src={cover} zoomSrc="/path/to/zoom-image.jpg" />
+          <ControlledZoom isZoomed={isZoomed} onZoomChange={handleZoomChange}>
+          <img
+            alt="That wanaka tree, alone in the water near mountains"
+            src="https://images.unsplash.com/photo-1597157639073-69284dc0fdaf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwd2VkZGluZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+            width="500"
+          />
+        </ControlledZoom>
+        </Box>
 
-      {/* <Stack spacing={2} sx={{ p: 3 }}>
-        <Link to="#" color="inherit" underline="hover" component={RouterLink}>
-          <Typography variant="subtitle2" noWrap>
-            {name}
-          </Typography>
-        </Link>
-
-        <Stack direction="row" alignItems="center" justifyContent="space-between">
-          <ColorPreview colors={colors} />
-          <Typography variant="subtitle1">
-            <Typography
-              component="span"
-              variant="body1"
-              sx={{
-                color: 'text.disabled',
-                textDecoration: 'line-through',
-              }}
-            >
-              {priceSale && fCurrency(priceSale)}
-            </Typography>
-            &nbsp;
-            {fCurrency(price)}
-          </Typography>
-        </Stack>
-      </Stack> */}
-    </Card>
+        
+      </Card> */}
+    </>
   );
 }

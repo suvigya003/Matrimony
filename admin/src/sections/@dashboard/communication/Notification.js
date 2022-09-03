@@ -37,27 +37,32 @@ export default function Notification() {
           flexDirection: 'column',
         }}
       >
-        <FormControl sx={{ m: 1, }} variant="outlined">
+        <Box marginBottom={3}>
+          <TextField fullWidth label="Title" variant="outlined" />
+        </Box>
+        <Box marginBottom={3}>
+          <TextField fullWidth label="Notification Message" multiline rows={10} variant="outlined" />
+        </Box>
+
+        {/* <FormControl sx={{ m: 1 }} variant="outlined">
           <label htmlFor="temp">
             Title
             <OutlinedInput
-                          id="outlined-adornment-weight"
-                          fullWidth
+              id="outlined-adornment-weight"
+              fullWidth
               //   value={values.weight}
               //   onChange={handleChange('weight')}
               //   endAdornment={<InputAdornment position="end">kg</InputAdornment>}
               aria-describedby="outlined-weight-helper-text"
               inputProps={{
                 'aria-label': 'weight',
-                          }}
+              }}
             />
           </label>
         </FormControl>
-        <FormControl sx={{ m: 1, }} variant="outlined">
-          {/* <FormHelperText id="outlined-weight-helper-text">Weight</FormHelperText> */}
+        <FormControl sx={{ m: 1 }} variant="outlined">
           <label htmlFor="temp">
             Notification Message
-            {/* <input type="text" /> */}
             <OutlinedInput
               id="outlined-adornment-weight"
               multiline
@@ -75,16 +80,19 @@ export default function Notification() {
               }}
             />
           </label>
-        </FormControl>
+        </FormControl> */}
         <Stack direction="row" alignItems="center" justifyContent="right" mb={5} mr={1} mt={1}>
-                  <Button variant="contained" component={RouterLink} to="#"
-                    //   startIcon={<Iconify icon="eva:plus-fill" />}
-                      sx={{pl:'20px', pr:'20px'}}
-                  >
+          <Button
+            variant="contained"
+            component={RouterLink}
+            to="#"
+            //   startIcon={<Iconify icon="eva:plus-fill" />}
+            sx={{ pl: '20px', pr: '20px' }}
+          >
             Send
           </Button>
-              </Stack>
-              <NotificationTable/>
+        </Stack>
+        <NotificationTable />
       </Box>
     </>
   );
