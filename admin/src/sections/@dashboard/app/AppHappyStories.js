@@ -24,7 +24,22 @@ export default function AppHappyStories({title,products,...other}) {
     return (
       <>
         <Card spacing={3} sx={{ p: 3, pt: 0 }} {...other}>
-          <CardHeader title={title} />
+          <Box sx={{ display: 'flex', justifyContent:'space-between' }}>
+            <CardHeader title={title} />
+            <InfoStyle>
+              <Button
+                size="small"
+                sx={{
+                  textTransform: 'none',
+                  // color: '#795548',
+                  fontWeight: 600,
+                }}
+              >
+                See All
+              </Button>
+            </InfoStyle>
+          </Box>
+
           <Divider />
           <Grid container spacing={3} sx={{ pt: 3 }} {...other}>
             {products.map((product) => (
@@ -33,18 +48,6 @@ export default function AppHappyStories({title,products,...other}) {
               </Grid>
             ))}
           </Grid>
-          <InfoStyle>
-            <Button
-              size="small"
-              sx={{
-                textTransform: 'none',
-                // color: '#795548',
-                fontWeight: 600,
-              }}
-            >
-              See All
-            </Button>
-          </InfoStyle>
         </Card>
       </>
     );

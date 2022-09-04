@@ -41,7 +41,7 @@ export default function SMS() {
           <TextField fullWidth label="Title" variant="outlined" />
         </Box>
         <Box marginBottom={3}>
-          <TextField fullWidth label="Notification Message" multiline rows={10} variant="outlined" />
+          <TextField fullWidth label="Message" multiline rows={10} variant="outlined" />
         </Box>
         {/* <FormControl sx={{ m: 1 }} variant="outlined">
           <label htmlFor="temp">

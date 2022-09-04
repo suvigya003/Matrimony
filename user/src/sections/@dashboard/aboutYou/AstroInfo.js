@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
-import {Box,Container, Grid, FormControl, InputLabel}  from "@mui/material";
+import { Box, Container, Select, MenuItem, Grid, FormControl, InputLabel } from '@mui/material';
 import Divider from "@mui/material/Divider";
 import Button from "@mui/material/Button";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -93,6 +93,16 @@ export default function AstroInfo ({ nextStep, calcPercentage }) {
           </Grid>
           <Grid item xs={12} sm={6} md={6}>
             <TextField fullWidth label="Birth Date" type="date" variant="outlined" />
+          </Grid>
+          <Grid item xs={12} sm={6} md={6}>
+            <FormControl fullWidth>
+              <InputLabel id="demo-simple-select-label">Mangalik</InputLabel>
+              <Select fullWidth labelId="demo-simple-select-label" label="Mangalik">
+                <MenuItem value="Fully">Fully</MenuItem>
+                <MenuItem value="Aanshik">Aanshik</MenuItem>
+                <MenuItem value="No">No</MenuItem>
+              </Select>
+            </FormControl>
           </Grid>
         </Grid>
       </Container>

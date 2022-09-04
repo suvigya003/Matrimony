@@ -1,9 +1,16 @@
 import { filter } from 'lodash';
 import { sentenceCase } from 'change-case';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
+import Modal from '@mui/material/Modal';
+// import CopyToClipboard from './CopyToClipboard';
+import TextField from '@mui/material/TextField';
+// import { CopyToClipboard } from 'react-copy-to-clipboard';
+
 // material
 import {
+  Box,
+  Snackbar,
   Grid,
   Card,
   CardHeader,
@@ -26,7 +33,14 @@ import Label from '../components/Label';
 import Scrollbar from '../components/Scrollbar';
 import Iconify from '../components/Iconify';
 import SearchNotFound from '../components/SearchNotFound';
-import { UserListHead, UserListToolbar, UserMoreMenu, UserWidgetSummary } from '../sections/@dashboard/user';
+import {
+  RedeemWidgetSummary,
+  RedeemRewardsTable,
+  UserListHead,
+  UserListToolbar,
+  UserMoreMenu,
+  UserWidgetSummary,
+} from '../sections/@dashboard/user';
 // import AppWidgetSummary from '../sections/@dashboard/app';
 // mock
 import USERLIST from '../_mock/user';
@@ -100,7 +114,11 @@ export default function User() {
     }
     setSelected([]);
   };
-
+const [open1, setOpen1] = useState(false)
+const handleClick1 = () => {
+  setOpen(true);
+  navigator.clipboard.writeText(window.location.toString());
+}
   const handleClick = (event, name) => {
     const selectedIndex = selected.indexOf(name);
     let newSelected = [];
@@ -128,7 +146,22 @@ export default function User() {
   const handleFilterByName = (event) => {
     setFilterName(event.target.value);
   };
-
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: '80%',
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+  };
+  const [value, setValue] = useState('');
+  const [copied, setCopied] = useState(false);
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - USERLIST.length) : 0;
 
   const filteredUsers = applySortFilter(USERLIST, getComparator(order, orderBy), filterName);
@@ -154,11 +187,51 @@ export default function User() {
           <Grid item xs={12} sm={6} md={3}>
             <UserWidgetSummary title="Rewards" total={50} color="info" icon={'ant-design:apple-filled'} />
           </Grid>
-
           <Grid item xs={12} sm={6} md={3}>
-            <UserWidgetSummary title="Redeem Rewards"color="info" icon={'ant-design:apple-filled'} />
+            <RedeemWidgetSummary title="Redeem Rewards" total={50} color="info" icon={'ant-design:apple-filled'} />
           </Grid>
         </Grid>
+
+        <Card mb={3}>
+          <CardHeader title="Your Referral Link" />
+          {/* <TextField
+            fullWidth
+            label="Referral Link"
+            variant="outlined"
+            id="outlined"
+            // id="outlined-read-only-input"
+            // defaultValue="abC/24331739/3d5w27s$nj"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+            InputProps={{
+              readOnly: true,
+            }}
+          /> */}
+          <Grid sx={{ alignItems: 'center', }} container spacing={3}  mb={3}>
+            <Grid item xs={12} sm={6} md={8}>
+              <TextField
+                fullWidth
+                label="Referral Link"
+                variant="outlined"
+                defaultValue="abC/24331739/3d5w27s$nj"
+                value={value}
+                // onChange={(e) => setValue(e.target.value)}
+                InputProps={{
+                  readOnly: true,
+                }}
+              />
+            </Grid>
+            <Grid item xs={12} sm={6} md={4}>
+              <Button
+                onClick={() => {
+                  navigator.clipboard.writeText(value);
+                }}
+              >
+                Copy
+              </Button>
+            </Grid>
+          </Grid>
+        </Card>
 
         <Card>
           <CardHeader title="Referred Users" />

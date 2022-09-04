@@ -147,7 +147,7 @@ export default function Happy() {
       <Container>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={12} md={12}>
-            <Card >
+            <Card>
               <Box
                 p={3}
                 // mb={20}
@@ -162,61 +162,19 @@ export default function Happy() {
                 alignItems: 'center',
               }}
             > */}
-                <Typography>Couple Name</Typography>
-                <FormControl sx={{ m: 1, mb: 3, ml: 0 }} variant="outlined">
-                  {/* <FormHelperText id="outlined-weight-helper-text">Weight</FormHelperText> */}
+                <TextField sx={{ mb: 3 }} fullWidth label="Couple Name" variant="outlined" />
 
-                  {/* <input type="text" /> */}
-                  <TextField
-                    id="outlined-adornment-weight"
-                    fullWidth
-                    //   width='100%'
-                    //   value={values.weight}
-                    //   onChange={handleChange('weight')}
-                    // startAdornment={<InputAdornment position="end">$ &nbsp;</InputAdornment>}
-                    aria-describedby="outlined-weight-helper-text"
-                    inputProps={{
-                      'aria-label': 'weight',
-                    }}
-                  />
-                  {/* </label> */}
-                </FormControl>
-                {/* </Box> */}
-                {/* <Box
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-              }}
-            > */}
-                <Typography>Image</Typography>
+                <Typography sx={{ mb: 3,}} variant="subtitle1">
+                  Image
+                </Typography>
                 <Box
                   component="img"
                   src="https://images.unsplash.com/photo-1502307100811-6bdc0981a85b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Ym95c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
                   sx={{ width: 95, height: 95, objectFit: 'cover', borderRadius: 1.5, flexShrink: 0 }}
                 />
-                <Typography sx={{ mt: 3 }}>Story</Typography>
-                <FormControl sx={{ m: 1, ml: 0 }} variant="outlined">
-                  {/* <FormHelperText id="outlined-weight-helper-text">Weight</FormHelperText> */}
+                <TextField sx={{ mb: 3, mt: 3 }} fullWidth label="Story" multiline rows={8} variant="outlined" />
+                {/* <Typography sx={{ mt: 3 }}>Story</Typography> */}
 
-                  {/* <input type="text" /> */}
-                  <OutlinedInput
-                    id="outlined-adornment-weight"
-                    multiline
-                    maxRows={4}
-                    fullWidth
-                    //   width='100%'
-                    //   value={values.weight}
-                    //   onChange={handleChange('weight')}
-                    // startAdornment={<InputAdornment position="end">$ &nbsp;</InputAdornment>}
-                    aria-describedby="outlined-weight-helper-text"
-                    inputProps={{
-                      'aria-label': 'weight',
-                    }}
-                    sx={{
-                      minWidth: '100%',
-                    }}
-                  />
-                </FormControl>
                 {/* </Box> */}
 
                 <Stack direction="row" alignItems="center" justifyContent="right" mb={5} mr={1} mt={1}>

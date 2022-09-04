@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
-import { Box, Grid, Container, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
+import { Box,Grid, Container, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import Button from "@mui/material/Button";
@@ -154,6 +154,7 @@ export default function Preference  ({ nextStep, calcPercentage })  {
               </Select>
             </FormControl>
           </Grid>
+
           <Grid item xs={12} sm={6} md={6}>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Subcaste</InputLabel>
@@ -178,6 +179,16 @@ export default function Preference  ({ nextStep, calcPercentage })  {
                 <MenuItem value="Ayyar">Ayyar</MenuItem>
                 <MenuItem value="Tyagi">Tyagi</MenuItem>
                 <MenuItem value="Ayangar">Ayangar</MenuItem>
+              </Select>
+            </FormControl>
+          </Grid>
+          <Grid item xs={12} sm={6} md={6}>
+            <FormControl fullWidth>
+              <InputLabel id="demo-simple-select-label">Mangalik</InputLabel>
+              <Select fullWidth labelId="demo-simple-select-label" label="Mangalik">
+                <MenuItem value="Fully">Fully</MenuItem>
+                <MenuItem value="Aanshik">Aanshik</MenuItem>
+                <MenuItem value="No">No</MenuItem>
               </Select>
             </FormControl>
           </Grid>

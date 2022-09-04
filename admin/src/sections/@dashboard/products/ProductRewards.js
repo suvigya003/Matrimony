@@ -92,14 +92,14 @@ export default function ProductRewards() {
               />
             </FormControl>
           </Box> */}
-          <Box container spacing={3} mb={3}>
-            <Box  xs={12} sm={6} md={3} mb={3}>
+          <Grid container spacing={3} mb={3}>
+            <Grid  xs={12} sm={6} md={3} mb={3}>
               <TextField fullWidth label="Spotlight Days" variant="outlined" />
-            </Box>            
-            <Box  xs={12} sm={6} md={3}>
+            </Grid>            
+            <Grid  xs={12} sm={6} md={3}>
               <TextField fullWidth label="Referral Count" variant="outlined" />
-            </Box>
-          </Box>
+            </Grid>
+          </Grid>
           <Stack direction="row" alignItems="center" justifyContent="right" mb={5} mr={1} mt={1}>
             <Button
               variant="contained"
