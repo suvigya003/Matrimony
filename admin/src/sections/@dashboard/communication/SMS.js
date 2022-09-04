@@ -87,7 +87,7 @@ export default function SMS() {
             />
           </label>
         </FormControl> */}
-        <Stack direction="row" alignItems="center" justifyContent="right" mb={5} mr={1} mt={1}>
+        <Stack direction="row" alignItems="center" justifyContent="left" mb={5} ml={1} mt={1}>
           <Button
             variant="contained"
             component={RouterLink}

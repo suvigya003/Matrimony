@@ -8,12 +8,18 @@ export default function You() {
     <>
       <Container>
         <Grid container spacing={3}>
-          <Grid item xs={12} sm={12} md={12}>
+          <Box m={3} mb={0}>
             <Typography variant="h5">Let the world know about you!!</Typography>
-          </Grid>
-          <Grid item xs={12} sm={12} md={12}>
-            <TextField fullWidth multiline maxRows={20} label="Write something about you" variant="outlined" />
-          </Grid>
+            {/* <TextField fullWidth multiline maxRows={20} label="Write something about you" variant="outlined" /> */}
+          </Box>
+          <TextField sx={{ m:3 }} fullWidth label="About You" multiline rows={8} variant="outlined" />
+
+          {/* <Grid item xs={12} sm={12} md={12}> */}
+
+          {/* </Grid> */}
+          {/* <Box xs={12} sm={12} md={12}> */}
+
+          {/* </Box> */}
         </Grid>
       </Container>
     </>

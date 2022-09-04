@@ -40,7 +40,7 @@ export default function ProductRewards() {
         >
           {/* <Card> */}
           {/* <CardHeader title="Add New Reward"/> */}
-          <h3>Add New Reward</h3>
+          <h3 >Add New Reward</h3>
           <br />
           {/* <Box
             sx={{
@@ -92,15 +92,18 @@ export default function ProductRewards() {
               />
             </FormControl>
           </Box> */}
-          <Grid container spacing={3} mb={3}>
-            <Grid  xs={12} sm={6} md={3} mb={3}>
-              <TextField fullWidth label="Spotlight Days" variant="outlined" />
-            </Grid>            
-            <Grid  xs={12} sm={6} md={3}>
-              <TextField fullWidth label="Referral Count" variant="outlined" />
+          {/* <Box mt={ 3} ml={3}> */}
+            <Grid container spacing={3} >
+              <Grid item xs={12} sm={6} md={3} >
+                <TextField fullWidth label="Spotlight Days" variant="outlined" />
+              </Grid>
+              <Grid item xs={12} sm={6} md={3}>
+                <TextField fullWidth label="Referral Count" variant="outlined" />
+              </Grid>
             </Grid>
-          </Grid>
-          <Stack direction="row" alignItems="center" justifyContent="right" mb={5} mr={1} mt={1}>
+          {/* </Box> */}
+
+          <Stack direction="row" alignItems="center" justifyContent="left" mb={3} ml={1} mt={3}>
             <Button
               variant="contained"
               component={RouterLink}

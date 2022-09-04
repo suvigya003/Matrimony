@@ -33,6 +33,7 @@ import Scrollbar from '../components/Scrollbar';
 import Iconify from '../components/Iconify';
 import SearchNotFound from '../components/SearchNotFound';
 import { UserListHead, UserListToolbar, UserMoreMenu } from '../sections/@dashboard/user';
+import { HappyImg } from '../sections/@dashboard/happy';
 // mock
 import USERLIST from '../_mock/happy';
 
@@ -162,22 +163,37 @@ export default function Happy() {
                 alignItems: 'center',
               }}
             > */}
-                <TextField sx={{ mb: 3 }} fullWidth label="Couple Name" variant="outlined" />
+                <Grid container spacing={3}>
+                  <Grid item xs={12} sm={6} md={4}>
+                    <TextField fullWidth label="Couple Name" variant="outlined" />
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={4}>
+                    <Typography variant="subtitle1">
+                      Image
+                    </Typography>
+                    <HappyImg />
+                  </Grid>
+                </Grid>
+                {/* <Box sx={{ display: 'flex' }}>
+                  <TextField sx={{ mb: 3 }} md={4} fullWidth label="Couple Name" variant="outlined" />
 
-                <Typography sx={{ mb: 3,}} variant="subtitle1">
-                  Image
-                </Typography>
-                <Box
+                  <Typography sx={{ mb: 3 }} variant="subtitle1">
+                    Image
+                    <HappyImg />
+                  </Typography>
+                </Box> */}
+
+                {/* <Box
                   component="img"
                   src="https://images.unsplash.com/photo-1502307100811-6bdc0981a85b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Ym95c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
                   sx={{ width: 95, height: 95, objectFit: 'cover', borderRadius: 1.5, flexShrink: 0 }}
-                />
+                /> */}
                 <TextField sx={{ mb: 3, mt: 3 }} fullWidth label="Story" multiline rows={8} variant="outlined" />
                 {/* <Typography sx={{ mt: 3 }}>Story</Typography> */}
 
                 {/* </Box> */}
 
-                <Stack direction="row" alignItems="center" justifyContent="right" mb={5} mr={1} mt={1}>
+                <Stack direction="row" alignItems="center" justifyContent="left" mb={3} ml={1} mt={1}>
                   <Button
                     variant="contained"
                     component={RouterLink}

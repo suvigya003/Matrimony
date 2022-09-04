@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
-import { Box,Grid, Container, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
+import { Input, InputAdornment,Box, Grid, Container, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import Button from "@mui/material/Button";
@@ -116,14 +116,16 @@ export default function Preference  ({ nextStep, calcPercentage })  {
             </FormControl>
           </Grid>
           <Grid item xs={12} sm={6} md={6}>
-            <FormControl fullWidth>
+            <TextField fullWidth label="Height (In Feet)" variant="outlined" placeholder="Eg: 5.5-5.8" />
+
+            {/* <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Height</InputLabel>
               <Select fullWidth label="Height">
                 <MenuItem value="4.10ft - 5.4ft">4.10ft - 5.4ft</MenuItem>
                 <MenuItem value="5.4ft - 5.10ft">5.4ft - 5.10ft</MenuItem>
                 <MenuItem value="5.10ft - 6.5ft">5.10ft - 6.5ft</MenuItem>
               </Select>
-            </FormControl>
+            </FormControl> */}
           </Grid>
           <Grid item xs={12} sm={6} md={6}>
             <FormControl fullWidth>
@@ -199,8 +201,23 @@ export default function Preference  ({ nextStep, calcPercentage })  {
                 <MenuItem value="Diploma">Diploma</MenuItem>
                 <MenuItem value="Graduate">Graduate</MenuItem>
                 <MenuItem value="Post Graduate">Post Graduate</MenuItem>
+                <MenuItem value="Other">
+                  Other
+                  {/* <FormControl fullWidth sx={{ m: 1 }} variant="standard">
+                    <InputLabel htmlFor="standard-adornment-amount">Amount</InputLabel>
+                    <Input
+                      id="standard-adornment-amount"
+                      // value={values.amount}
+                      // onChange={handleChange('amount')}
+                      startAdornment={<InputAdornment position="start">Other:</InputAdornment>}
+                    />
+                  </FormControl> */}
+                </MenuItem>
               </Select>
             </FormControl>
+          </Grid>
+          <Grid item xs={12} sm={6} md={6}>
+            <TextField fullWidth label="Specify Other" variant="outlined" />
           </Grid>
           <Grid item xs={12} sm={6} md={6}>
             <FormControl fullWidth>

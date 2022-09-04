@@ -158,7 +158,7 @@ city: false,
             <Box />
           </Grid>
           <Grid item xs={12} sm={6} md={12}>
-            Work Location:
+            Work Location
           </Grid>
           <Grid item xs={12} sm={6} md={6}>
             <TextField fullWidth label="Country" variant="outlined" />

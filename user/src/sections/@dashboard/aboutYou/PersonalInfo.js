@@ -18,6 +18,7 @@ import {
 import InputBase from '@mui/material/InputBase';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
+import Date from './Date';
 import { FormProvider, RHFTextField, RHFCheckbox } from '../../../components/hook-form';
 import Hobbies from './Hobbies';
 
@@ -208,13 +209,9 @@ export default function PersonalInfo({ nextStep, calcPercentage }) {
             </FormControl>
             {/* </label> */}
           </Grid>
+         
           <Grid item xs={12} sm={6} md={6}>
-            {/* <label htmlFor="hello">
-              Date of Birth &nbsp; */}
-            <TextField type={'date'} fullWidth label="Date of Birth" variant="outlined" />
-            {/* Hello
-              </TextField>
-            </label> */}
+            <Date title={'Birth Date'} />
           </Grid>
           <Grid item xs={12} sm={6} md={6}>
             <Box />

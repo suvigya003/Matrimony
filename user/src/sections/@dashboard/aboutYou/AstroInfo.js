@@ -4,6 +4,7 @@ import { Box, Container, Select, MenuItem, Grid, FormControl, InputLabel } from 
 import Divider from "@mui/material/Divider";
 import Button from "@mui/material/Button";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Date from './Date'
 
 const theme = createTheme({
   palette: {
@@ -92,7 +93,7 @@ export default function AstroInfo ({ nextStep, calcPercentage }) {
             <TextField fullWidth label="Nakshatra" variant="outlined" />
           </Grid>
           <Grid item xs={12} sm={6} md={6}>
-            <TextField fullWidth label="Birth Date" type="date" variant="outlined" />
+            <Date title={ 'Birth Date'} />
           </Grid>
           <Grid item xs={12} sm={6} md={6}>
             <FormControl fullWidth>

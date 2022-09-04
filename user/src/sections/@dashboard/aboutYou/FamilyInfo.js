@@ -121,15 +121,13 @@ export default function FamilyInfo ({ nextStep, calcPercentage })  {
           <Grid item xs={12} sm={6} md={6}>
             <Box />
           </Grid>
-          <Grid item xs={12} sm={6} md={12}>
-            <Typography>Father:</Typography>
-          </Grid>
+
           <Grid item xs={12} sm={6} md={6}>
-            <TextField fullWidth label="Name" variant="outlined" />
+            <TextField fullWidth label="Father's Name" variant="outlined" />
           </Grid>
           <Grid item xs={12} sm={6} md={6}>
             <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">Occupation</InputLabel>
+              <InputLabel id="demo-simple-select-label">Father's Occupation</InputLabel>
               <Select fullWidth label="Occupation">
                 <MenuItem value="Government/ PSU">Government/ PSU</MenuItem>
                 <MenuItem value="Private">Private</MenuItem>
@@ -141,20 +139,18 @@ export default function FamilyInfo ({ nextStep, calcPercentage })  {
             </FormControl>
           </Grid>
           <Grid item xs={12} sm={6} md={6}>
-            <TextField fullWidth label="Company / Institution Name" variant="outlined" />
+            <TextField fullWidth label="Father's Company / Institution Name" variant="outlined" />
           </Grid>
           <Grid item xs={12} sm={6} md={6}>
             <Box />
           </Grid>
-          <Grid item xs={12} sm={6} md={12}>
-            <Typography>Mother:</Typography>
-          </Grid>
+
           <Grid item xs={12} sm={6} md={6}>
-            <TextField fullWidth label="Name" variant="outlined" />
+            <TextField fullWidth label="Mother's Name" variant="outlined" />
           </Grid>
           <Grid item xs={12} sm={6} md={6}>
             <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">Occupation</InputLabel>
+              <InputLabel id="demo-simple-select-label">Mother's Occupation</InputLabel>
               <Select fullWidth label="Occupation">
                 <MenuItem value="Government/ PSU">Government/ PSU</MenuItem>
                 <MenuItem value="Private">Private</MenuItem>
@@ -166,20 +162,18 @@ export default function FamilyInfo ({ nextStep, calcPercentage })  {
             </FormControl>
           </Grid>
           <Grid item xs={12} sm={6} md={6}>
-            <TextField fullWidth label="Company / Institution Name" variant="outlined" />
+            <TextField fullWidth label="Mother's Company / Institution Name" variant="outlined" />
           </Grid>
           <Grid item xs={12} sm={6} md={6}>
             <Box />
           </Grid>
-          <Grid item xs={12} sm={6} md={12}>
-            <Typography>Brother:</Typography>
-          </Grid>
+
           <Grid item xs={12} sm={6} md={6}>
-            <TextField fullWidth label="Name" variant="outlined" />
+            <TextField fullWidth label="Brother's Name" variant="outlined" />
           </Grid>
           <Grid item xs={12} sm={6} md={6}>
             <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">Occupation</InputLabel>
+              <InputLabel id="demo-simple-select-label">Brother's Occupation</InputLabel>
               <Select fullWidth label="Occupation">
                 <MenuItem value="Government/ PSU">Government/ PSU</MenuItem>
                 <MenuItem value="Private">Private</MenuItem>
@@ -191,55 +185,7 @@ export default function FamilyInfo ({ nextStep, calcPercentage })  {
             </FormControl>
           </Grid>
           <Grid item xs={12} sm={6} md={6}>
-            <TextField fullWidth label="Company / Institution Name" variant="outlined" />
-          </Grid>
-          <Grid item xs={12} sm={6} md={6}>
-            <Box />
-          </Grid>
-          <Grid item xs={12} sm={6} md={6}>
-            <Button
-              variant="contained"
-              fullWidth
-              label=""
-              sx={{
-                borderRadius: '8px',
-                backgroundColor: '#2065D1',
-                paddingLeft: '45px',
-                paddingRight: '45px',
-                paddingTop: '10px',
-                paddingBottom: '10px',
-                fontWeight: 600,
-              }}
-            >
-              <AddCircleOutlineIcon
-                sx={{
-                  marginRight: '10px',
-                }}
-              />
-              Add More
-            </Button>
-          </Grid>
-          <Grid item xs={12} sm={6} md={12}>
-            <Typography>Sister:</Typography>
-          </Grid>
-          <Grid item xs={12} sm={6} md={6}>
-            <TextField fullWidth label="Name" variant="outlined" />
-          </Grid>
-          <Grid item xs={12} sm={6} md={6}>
-            <FormControl fullWidth>
-              <InputLabel id="demo-simple-select-label">Occupation</InputLabel>
-              <Select fullWidth label="Occupation">
-                <MenuItem value="Government/ PSU">Government/ PSU</MenuItem>
-                <MenuItem value="Private">Private</MenuItem>
-                <MenuItem value="Business">Business</MenuItem>
-                <MenuItem value="Defence">Defence</MenuItem>
-                <MenuItem value="Self Employed">Self Employed</MenuItem>
-                <MenuItem value="Student">Student</MenuItem>
-              </Select>
-            </FormControl>
-          </Grid>
-          <Grid item xs={12} sm={6} md={6}>
-            <TextField fullWidth label="Company / Institution Name" variant="outlined" />
+            <TextField fullWidth label="Brother's Company / Institution Name" variant="outlined" />
           </Grid>
           <Grid item xs={12} sm={6} md={6}>
             <Box />
@@ -270,9 +216,56 @@ export default function FamilyInfo ({ nextStep, calcPercentage })  {
           <Grid item xs={12} sm={6} md={6}>
             <Box />
           </Grid>
-          <Grid item xs={12} sm={6} md={12}>
-            <Typography>Address:</Typography>
+          <Grid item xs={12} sm={6} md={6}>
+            <TextField fullWidth label="Sister's Name" variant="outlined" />
           </Grid>
+          <Grid item xs={12} sm={6} md={6}>
+            <FormControl fullWidth>
+              <InputLabel id="demo-simple-select-label">Sister's Occupation</InputLabel>
+              <Select fullWidth label="Occupation">
+                <MenuItem value="Government/ PSU">Government/ PSU</MenuItem>
+                <MenuItem value="Private">Private</MenuItem>
+                <MenuItem value="Business">Business</MenuItem>
+                <MenuItem value="Defence">Defence</MenuItem>
+                <MenuItem value="Self Employed">Self Employed</MenuItem>
+                <MenuItem value="Student">Student</MenuItem>
+              </Select>
+            </FormControl>
+          </Grid>
+
+          <Grid item xs={12} sm={6} md={6}>
+            <TextField fullWidth label="Sister's Company / Institution Name" variant="outlined" />
+          </Grid>
+          <Grid item xs={12} sm={6} md={6}>
+            <Box />
+          </Grid>
+          <Grid item xs={12} sm={6} md={6}>
+            <Button
+              variant="contained"
+              fullWidth
+              label=""
+              sx={{
+                borderRadius: '8px',
+                backgroundColor: '#2065D1',
+                paddingLeft: '45px',
+                paddingRight: '45px',
+                paddingTop: '10px',
+                paddingBottom: '10px',
+                fontWeight: 600,
+              }}
+            >
+              <AddCircleOutlineIcon
+                sx={{
+                  marginRight: '10px',
+                }}
+              />
+              Add More
+            </Button>
+          </Grid>
+          <Grid item xs={12} sm={6} md={6}>
+            <Box />
+          </Grid>
+          
           <Grid item xs={12} sm={6} md={6}>
             <TextField fullWidth label="Country" variant="outlined" />
           </Grid>

@@ -41,7 +41,7 @@ export default function Blog() {
               <BlogWidgetSummary title="Offer 2" total={50} color="info" icon={'ant-design:apple-filled'} />
             </Grid>
           </Grid>
-          <Stack direction="row" alignItems="center" justifyContent="right" mb={5} mr={1} mt={1} sx={{pr:3}}>
+          <Stack direction="row" alignItems="center" justifyContent="left" mb={5} ml={3} mt={1} sx={{pr:3}}>
             <Button
               variant="contained"
               component={RouterLink}
