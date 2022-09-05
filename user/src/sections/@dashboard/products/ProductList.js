@@ -40,7 +40,6 @@ export default function ProductList({ products, ...other }) {
             </Button>
             {/* <Button variant="contained" component={RouterLink} to="#" sx={{justifyContent:'center', p:'0px 0px', pl:'0px',pr:'0px'}} startIcon={<Iconify icon="eva:plus-fill" />}/> */}
             <Typography sx={{ width: '100%', height: '100%' }}>Add more images</Typography>
-            
           </center>
         </Card>
       </Grid>

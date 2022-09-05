@@ -17,6 +17,7 @@ import { fCurrency } from '../../../utils/formatNumber';
 // components
 import Label from '../../../components/Label';
 import { ColorPreview } from '../../../components/color-utils';
+import ProductModalContent from '../../../_mock/ProductModalContent';
 
 // ----------------------------------------------------------------------
 
@@ -43,11 +44,12 @@ export default function ShopProductCard({ product }) {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: '60%',
+    // width: '90%',
     bgcolor: 'background.paper',
     //   border: '2px solid #000',
     boxShadow: 24,
-    p: 4,
+    p: 0,
+    borderRadius:'16px'
     // pt: 1,
   };
   const { name, cover, price, colors, status, priceSale } = product;
@@ -78,9 +80,9 @@ const handleZoomChange = useCallback((shouldZoom) => {
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
           >
-            {/* <Box sx={style}> */}
+            <Box sx={style}>
               <center>
-                <ProductModal />
+                <ProductModal products={ProductModalContent} />
               </center>
 
               {/* <Typography id="modal-modal-title" variant="h6" component="h2">
@@ -90,7 +92,7 @@ const handleZoomChange = useCallback((shouldZoom) => {
                       Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
                     </Typography> */}
               {/* <RedeemRewardsTable /> */}
-            {/* </Box> */}
+            </Box>
           </Modal>
           {/* <ProductImgStyle alt={name} src={cover} /> */}
         </Box>
