@@ -157,7 +157,7 @@ const style = {
   boxShadow: 24,
   p: 4,
   };
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState('abC/24331739/3d5w27s$nj');
   const [copied, setCopied] = useState(false);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -212,9 +212,10 @@ const style = {
               <Grid item xs={12} sm={6} md={8}>
                 <TextField
                   fullWidth
+                  focused
                   label="Referral Link"
                   variant="outlined"
-                  defaultValue="abC/24331739/3d5w27s$nj"
+                  // defaultValue="abC/24331739/3d5w27s$nj"
                   value={value}
                   // onChange={(e) => setValue(e.target.value)}
                   InputProps={{

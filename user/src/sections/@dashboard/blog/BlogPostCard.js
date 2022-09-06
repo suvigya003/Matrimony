@@ -70,7 +70,7 @@ export default function BlogPostCard({ post, index }) {
 
   return (
     // <Grid item xs={12} sm={latestPostLarge ? 12 : 6} md={latestPostLarge ? 6 : 3}>
-    <Grid item xs={12} sm={6} md={4}>
+    <Grid item xs={12} sm={6} md={3}>
       <Card sx={{ position: 'relative' }}>
         <CardMediaStyle>
           <CoverImgStyle alt={title} src={cover} />

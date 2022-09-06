@@ -164,7 +164,7 @@ export default function Happy() {
               }}
             > */}
                 <Grid container spacing={3}>
-                  <Grid item xs={12} sm={6} md={4}>
+                  <Grid item xs={12} sm={6} md={8}>
                     <TextField fullWidth label="Couple Name" variant="outlined" />
                   </Grid>
                   <Grid item xs={12} sm={6} md={4}>

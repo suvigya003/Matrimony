@@ -1,6 +1,7 @@
 import { Link as RouterLink } from 'react-router-dom';
 // material
-import { Grid, Card, Button, Container, Stack, Typography } from '@mui/material';
+import TextField from '@mui/material/TextField';
+import { Input,Checkbox, InputAdornment, Box,Card,OutlinedInput, CardHeader, Grid, Container, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 // components
 // import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import Page from '../components/Page';
@@ -58,10 +59,48 @@ export default function Blog() {
           <Grid item xs={12} sm={6} md={3}>
             <BlogWidgetSummary title="Package 4" total={234} color="error" icon={'ant-design:bug-filled'} />
           </Grid>
+        </Grid>
+        <Box mt={3}>
+          <Card>
+            <CardHeader title="Add New Plan" />
+            <Box p={3} sx={{}}>
+              <Grid container spacing={3}>
+                <Grid item xs={12} sm={6} md={6}>
+                  <TextField fullWidth label="Name" variant="outlined" />
+                </Grid>
+               
+                <Grid item xs={12} sm={6} md={6}>
+                  <TextField fullWidth label="Monthly Discount (%)" variant="outlined" />
+                </Grid>
 
-          <Grid item xs={12} sm={6} md={3}>
-            {/* <Card title="Add New Package" total={234} color="grey" icon={'ant-design:bug-filled'} /> */}
-            {/* <Card>
+                <Grid item xs={12} sm={6} md={6}>
+                  <TextField fullWidth label="Annual Discount (%)" variant="outlined" />
+                </Grid>
+                <Grid item xs={12} sm={6} md={6}>
+                  <TextField fullWidth label="Monthly Price (Rs.)" variant="outlined" />
+                </Grid>
+                <Grid item xs={12} sm={6} md={6}>
+                  <TextField fullWidth label="Annual Price (Rs.)" variant="outlined" />
+                </Grid>
+                <Grid item xs={12} sm={6} md={6}>
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">Description</InputLabel>
+                    <Select fullWidth labelId="demo-simple-select-label" label="Description">
+                      <MenuItem type="checkbox" value="Fully">
+                        {/* <Checkbox>Fully</Checkbox> */}
+                      </MenuItem>
+                      <MenuItem value="Aanshik">Aanshik</MenuItem>
+                      <MenuItem value="No">No</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Grid>
+              </Grid>
+            </Box>
+          </Card>
+        </Box>
+
+        {/* <Card title="Add New Package" total={234} color="grey" icon={'ant-design:bug-filled'} /> */}
+        {/* <Card>
               <center>
                 <Button sx={{ display: 'flex', flexDirection: 'column' }}>
                   <AddOutlinedIcon sx={{ height: 100, width: 100 }} />
@@ -69,8 +108,6 @@ export default function Blog() {
                 <Typography sx={{ width: '100%', height: '100%' }}>Add more images</Typography>
               </center>
             </Card> */}
-          </Grid>
-        </Grid>
       </Container>
     </Page>
   );
