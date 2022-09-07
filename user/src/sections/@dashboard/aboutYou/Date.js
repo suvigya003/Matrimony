@@ -31,8 +31,18 @@ export default function Date(props) {
             onChange={(newValue) => {
               setValue(newValue);
             }}
-            
-            
+            PaperProps={{
+              sx: {
+                // height:'100px',
+                fontSize: '30px',
+                "&::-webkit-scrollbar": {
+                  width: 8,
+                },
+                "&::-webkit-scrollbar-track": {
+                  backgroundColor: '#f1f1f1',
+                },
+              },
+            }}
             renderInput={(params) => <TextField {...params} label="Date of Birth" variant="outlined" fullWidth />}
           />
         </LocalizationProvider>

@@ -213,19 +213,19 @@ export default function PersonalInfo({ nextStep, calcPercentage }) {
           <Grid item xs={12} sm={6} md={6}>
             <Date
               title={'Birth Date'}
-              MenuProps={{
-                PaperProps: {
-                  sx: {
-                    fontSize: '30px',
-                    '&::-webkit-scrollbar': {
-                      width: 8,
-                    },
-                    '&::-webkit-scrollbar-track': {
-                      backgroundColor: '#f1f1f1',
-                    },
-                  },
-                },
-              }}
+              // MenuProps={{
+              //   PaperProps: {
+              //     sx: {
+              //       fontSize: '30px',
+              //       '&::-webkit-scrollbar': {
+              //         width: 8,
+              //       },
+              //       '&::-webkit-scrollbar-track': {
+              //         backgroundColor: '#f1f1f1',
+              //       },
+              //     },
+              //   },
+              // }}
             />
           </Grid>
           <Grid item xs={12} sm={6} md={6}>
