@@ -67,12 +67,12 @@ const CoverImgStyle = styled('img')({
 
 // ----------------------------------------------------------------------
 
-BlogPostCard.propTypes = {
+BlogShortlistedPostCard.propTypes = {
   post: PropTypes.object.isRequired,
   index: PropTypes.number,
 };
 
-export default function BlogPostCard({ post, index }) {
+export default function BlogShortlistedPostCard({ post, index }) {
   const [check, setCheck] = useState(true);
   const handleClick1 = (event) => {
     setCheck(true);
@@ -107,15 +107,7 @@ export default function BlogPostCard({ post, index }) {
               Name &nbsp;
             </Typography>
 
-            {check ? (
-              <Button onClick={handleClick}>
-                <StarBorderIcon />
-              </Button>
-            ) : (
-              <Button onClick={handleClick1}>
-                <StarIcon sx={{ color: '#f44336', backgroundColor: 'white', borderRadius: '50%' }} />
-              </Button>
-            )}
+            
           </Box>
 
           <Typography variant="body2" gutterBottom color="text.secondary">

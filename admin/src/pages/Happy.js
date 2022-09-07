@@ -163,17 +163,18 @@ export default function Happy() {
                 alignItems: 'center',
               }}
             > */}
-                <Grid container spacing={3}>
-                  <Grid item xs={12} sm={6} md={8}>
-                    <TextField fullWidth label="Couple Name" variant="outlined" />
+                <Box sx={{ alignItems: 'center' }}>
+                  <Grid container alignItems={'center'} spacing={3}>
+                    <Grid item xs={12} sm={6} md={8}>
+                      <TextField fullWidth label="Couple Name" variant="outlined" />
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4}>
+                      <Typography variant="subtitle1">Image</Typography>
+                      <HappyImg />
+                    </Grid>
                   </Grid>
-                  <Grid item xs={12} sm={6} md={4}>
-                    <Typography variant="subtitle1">
-                      Image
-                    </Typography>
-                    <HappyImg />
-                  </Grid>
-                </Grid>
+                </Box>
+
                 {/* <Box sx={{ display: 'flex' }}>
                   <TextField sx={{ mb: 3 }} md={4} fullWidth label="Couple Name" variant="outlined" />
 

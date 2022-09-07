@@ -32,6 +32,11 @@ const navConfig = [
     path: '/dashboard/aboutYou',
     icon: getIcon('eva:lock-fill'),
   },
+  {
+    title: 'premium package',
+    path: '/dashboard/premiumPackage',
+    icon: getIcon('eva:lock-fill'),
+  },
   // {
   //   title: 'register',
   //   path: '/register',

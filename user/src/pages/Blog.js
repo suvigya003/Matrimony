@@ -1,10 +1,16 @@
+import React, { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 // material
 import { Box, Card, Grid, Button, Container, Stack, Typography } from '@mui/material';
+// import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import TabContext from '@mui/lab/TabContext';
+import TabList from '@mui/lab/TabList';
+import TabPanel from '@mui/lab/TabPanel';
 // components
 import Page from '../components/Page';
 import Iconify from '../components/Iconify';
-import { BlogPostCard, BlogPostsSort, BlogPostsSearch, BlogWidgetSummary } from '../sections/@dashboard/blog';
+import { BlogPostCard, BlogPostsSort, BlogPostsSearch, BlogWidgetSummary, BlogMatches, BlogShortlisted } from '../sections/@dashboard/blog';
 // mock
 import POSTS from '../_mock/blog';
 
@@ -19,19 +25,30 @@ const SORT_OPTIONS = [
 // ----------------------------------------------------------------------
 
 export default function Blog() {
+  const [value, setValue] = React.useState('1');
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   return (
     <Page title="Dashboard: Blog">
       <Container>
-        <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
-          <Typography variant="h4" gutterBottom>
-            Matches
-          </Typography>
-
-          {/* <Button variant="contained" component={RouterLink} to="#" startIcon={<Iconify icon="eva:plus-fill" />}>
-            New Post
-          </Button> */}
-        </Stack>
-        <Box
+        <TabContext value={value}>
+          <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+            <TabList onChange={handleChange} aria-label="lab API tabs example">
+              <Tab label="Matches" value="1" />
+              <Tab label="Shortlisted Matches" value="2" />
+            </TabList>
+          </Box>
+          <TabPanel value="1">
+            <BlogMatches />
+          </TabPanel>
+          <TabPanel value="2">
+            <BlogShortlisted />
+          </TabPanel>
+        </TabContext>
+        {/* <Box
           fullWidth
           sx={{
             display: 'flex',
@@ -43,7 +60,8 @@ export default function Blog() {
         >
           <Box
             sx={{
-              backgroundColor: '#4DB337',
+              // backgroundColor: '#4DB337',
+              backgroundColor: 'success.main',
               width: '263px',
               height: '60px',
               borderRadius: '16px',
@@ -209,40 +227,17 @@ export default function Blog() {
             </Button>
           </Box>
         </Box>
-        {/* </Box> */}
-        {/* <Card>
-          <Grid container spacing={2} mb={3} sx={{ p: 3 }}>
-            <Grid item xs={12} sm={6} md={3}>
-              <BlogWidgetSummary title="Offer 1" total={23} icon={'ant-design:android-filled'} />
-            </Grid>
-
-            <Grid item xs={12} sm={6} md={3}>
-              <BlogWidgetSummary title="Offer 2" total={50} color="info" icon={'ant-design:apple-filled'} />
-            </Grid>
-          </Grid>
-          <Stack direction="row" alignItems="center" justifyContent="left" mb={5} ml={3} mt={1} sx={{ pr: 3 }}>
-            <Button
-              variant="contained"
-              component={RouterLink}
-              to="#"
-              //   startIcon={<Iconify icon="eva:plus-fill" />}
-              sx={{ p: '8px', pl: '20px', pr: '20px' }}
-            >
-              Payment
-            </Button>
-          </Stack>
-        </Card> */}
-        {/* search bar and latest */}
+        
         <Stack mt={5} mb={5} direction="row" alignItems="center" justifyContent="space-between">
           <BlogPostsSearch posts={POSTS} />
-          {/* <BlogPostsSort options={SORT_OPTIONS} /> */}
+         
         </Stack>
 
         <Grid container spacing={3}>
           {POSTS.map((post, index) => (
             <BlogPostCard key={post.id} post={post} index={index} />
           ))}
-        </Grid>
+        </Grid> */}
       </Container>
     </Page>
   );

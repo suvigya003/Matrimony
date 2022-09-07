@@ -12,6 +12,8 @@ import Products from './pages/Products';
 import DashboardApp from './pages/DashboardApp';
 // import aboutYou from './pages/aboutYou/AboutYou';
 import AboutYou from './pages/AboutYou';
+import PremiumPackage from './pages/PremiumPackage';
+
 
 // ----------------------------------------------------------------------
 
@@ -26,6 +28,7 @@ export default function Router() {
         { path: 'products', element: <Products /> },
         { path: 'blog', element: <Blog /> },
         { path: 'aboutYou', element: <AboutYou /> },
+        { path: 'premiumPackage', element: <PremiumPackage /> },
       ],
     },
     {

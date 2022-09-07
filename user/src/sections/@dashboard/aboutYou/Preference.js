@@ -48,6 +48,14 @@ const theme = createTheme({
         },
       },
     },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textColor: 'secondary.main',
+          
+        }
+      }
+    }
   },
 });
 
@@ -90,6 +98,9 @@ export default function Preference  ({ nextStep, calcPercentage })  {
   const handleClick = () => {
     nextStep();
   };
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  // const handleClose = () => setOpen(false);
   return (
     <>
       <Container maxWidth="xl">
@@ -192,19 +203,25 @@ export default function Preference  ({ nextStep, calcPercentage })  {
                 fullWidth
                 label="Education"
                 name="education"
-                onChange={handleChange}
-                value={preferenceInfo.education}
+                // onChange={handleChange}
+                // value={preferenceInfo.education}
               >
                 <MenuItem value="Diploma">Diploma</MenuItem>
                 <MenuItem value="Graduate">Graduate</MenuItem>
                 <MenuItem value="Post Graduate">Post Graduate</MenuItem>
-                <MenuItem value="Other">Other</MenuItem>
+                <MenuItem value="Other">
+                  <Button  onClick={handleOpen} sx={{textDecoration:'none'}}>Other</Button>
+                </MenuItem>
               </Select>
             </FormControl>
           </Grid>
-          <Grid item xs={12} sm={6} md={6}>
-            <TextField fullWidth label="Specify Other" variant="outlined" />
-          </Grid>
+          {/* {preferenceInfo.education === 'Other' ? setOpen(true) : setOpen()} */}
+          {open && (
+            <Grid item xs={12} sm={6} md={6} >
+              <TextField fullWidth label="Specify Other" variant="outlined" />
+            </Grid>
+          )}
+
           <Grid item xs={12} sm={6} md={6}>
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Employed In</InputLabel>
