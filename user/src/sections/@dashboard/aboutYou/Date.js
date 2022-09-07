@@ -3,8 +3,19 @@ import TextField from '@mui/material/TextField';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+// const theme = createTheme({
+//   components: {
+//     Mui
+//     styleOverrides: {
+      
+//     }
+//   }
+// })
 
 export default function Date(props) {
+
     const { label } = props;
 
     const [value, setValue] = useState(new window.Date());
@@ -20,6 +31,8 @@ export default function Date(props) {
             onChange={(newValue) => {
               setValue(newValue);
             }}
+            
+            
             renderInput={(params) => <TextField {...params} label="Date of Birth" variant="outlined" fullWidth />}
           />
         </LocalizationProvider>

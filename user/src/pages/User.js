@@ -5,6 +5,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import Modal from '@mui/material/Modal';
 // import CopyToClipboard from './CopyToClipboard';
 import TextField from '@mui/material/TextField';
+import ContentCopyOutlinedIcon from '@mui/icons-material/ContentCopyOutlined';
 // import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 // material
@@ -207,37 +208,37 @@ const style = {
               readOnly: true,
             }}
           /> */}
-          <Box m={3}>
-
-            <Grid sx={{ alignItems: 'center' }} container spacing={1} mb={3}>
-              <Grid item xs={12} sm={6} md={8}>
-                <Texfield
+          <Grid container>
+            <Grid item sm={8} md={6}>
+              <Box m={3} p={1} sx={{ display: 'flex', border: '1px solid black', borderRadius: '8px' }}>
+                <TextField
                   fullWidth
                   focused
-                  label="Referral Link"
-                  variant="outlined"
+                  label=""
+                  variant="standard"
                   // defaultValue="abC/24331739/3d5w27s$nj"
                   value={value}
                   // onChange={(e) => setValue(e.target.value)}
                   InputProps={{
                     readOnly: true,
+                    disableUnderline: true,
                   }}
                 />
-              </Grid>
-              <Grid item xs={12} sm={6} md={4}>
+
                 <Button
+                  sx={{ backgroundColor: '#F9FAFB' }}
                   onClick={() => {
                     navigator.clipboard.writeText(value);
                   }}
                 >
-                  Copy
+                  <ContentCopyOutlinedIcon />
+                  {/* <img src="https://cdn-icons-png.flaticon.com/128/126/126498.png" alt="" srcSet="" /> */}
                 </Button>
-              </Grid>
+              </Box>
             </Grid>
-          </Box>
+          </Grid>
         </Card>
         <Box mt={3}>
-          
           <Card>
             <CardHeader title="Referred Users" />
             <UserListToolbar numSelected={selected.length} filterName={filterName} onFilterName={handleFilterByName} />
@@ -325,7 +326,6 @@ const style = {
             />
           </Card>
         </Box>
-        
       </Container>
     </Page>
   );

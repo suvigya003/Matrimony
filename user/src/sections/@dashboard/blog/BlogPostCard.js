@@ -113,7 +113,7 @@ export default function BlogPostCard({ post, index }) {
               </Button>
             ) : (
               <Button onClick={handleClick1}>
-                <StarIcon sx={{ color: '#f44336', backgroundColor: 'white', borderRadius: '50%' }} />
+                <StarIcon sx={{ color: '#f44336', backgroundColor: 'white', borderRadius: '50%' }} />               
               </Button>
             )}
           </Box>

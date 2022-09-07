@@ -209,9 +209,24 @@ export default function PersonalInfo({ nextStep, calcPercentage }) {
             </FormControl>
             {/* </label> */}
           </Grid>
-         
+
           <Grid item xs={12} sm={6} md={6}>
-            <Date title={'Birth Date'} />
+            <Date
+              title={'Birth Date'}
+              MenuProps={{
+                PaperProps: {
+                  sx: {
+                    fontSize: '30px',
+                    '&::-webkit-scrollbar': {
+                      width: 8,
+                    },
+                    '&::-webkit-scrollbar-track': {
+                      backgroundColor: '#f1f1f1',
+                    },
+                  },
+                },
+              }}
+            />
           </Grid>
           <Grid item xs={12} sm={6} md={6}>
             <Box />
